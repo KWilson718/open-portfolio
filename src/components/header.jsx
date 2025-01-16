@@ -9,7 +9,7 @@ export default function Header() {
     }
 
     return (
-        <Box>
+        <Box className="header">
             <Tabs 
                 value={tabValue} 
                 onChange={handleChange} 

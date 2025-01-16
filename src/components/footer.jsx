@@ -1,7 +1,9 @@
+import { Box } from "@mui/material";
+
 export default function Footer() {
     return (
-        <>
-            <h1>This is the Footer</h1>
-        </>
+        <Box className="footer" >
+            <h1>This is a Footer</h1>
+        </Box>
     );
 }

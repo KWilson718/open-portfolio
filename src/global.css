@@ -1,0 +1,11 @@
+.header {
+    min-height: 5.5vh;
+}
+
+.body {
+    min-height: 85vh;
+}
+
+.footer {
+    min-height: 5vh;
+}
