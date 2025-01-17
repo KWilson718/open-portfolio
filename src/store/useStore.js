@@ -1,5 +1,11 @@
+// useStore.js
 import { useContext } from 'react';
-import { StoreContext } from './storeProvider';
+import { StoreContext } from './storeContext'; // Ensure this path is correct
 
-// Custom hook to use the store context
-export const useStore = () => useContext(StoreContext);
+export const useStore = () => {
+  const context = useContext(StoreContext);
+  if (context === undefined) {
+    throw new Error('useStore must be used within a StoreProvider');
+  }
+  return context;
+};
