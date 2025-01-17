@@ -1,23 +1,32 @@
 import { Box, Typography } from "@mui/material";
 import { useStore } from "../store/useStore";
 
+import Home from "./pages/home";
+import About from "./pages/about";
+import Experience from "./pages/experience";
+import Projects from "./pages/projects";
+import Misc from "./pages/misc";
+
 export default function Body() {
     const {state} = useStore();
 
-    const pageTitles = {
-        0: "Home",
-        1: "About",
-        2: "Experience",
-        3: "Projects",
-        4: "Misc",
+    const pages = {
+        0: <Home />,
+        1: <About />,
+        2: <Experience />,
+        3: <Projects />,
+        4: <Misc />,
     }
 
-    const currentPage = pageTitles[state.page] || "Undefined Page";
+    const currentPageComponent = pages[state.page] || (
+        <Typography variant="h3">
+            Page Not Found
+        </Typography>
+    );
 
     return (
         <Box className="body" >
-            <h1>This is the Body</h1>
-            <Typography variant="h4">Current Page: {currentPage}</Typography>
+            {currentPageComponent}
         </Box>
     );
 }
