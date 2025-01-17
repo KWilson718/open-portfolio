@@ -1,4 +1,4 @@
-import { Box, Tabs, Tab } from "@mui/material";
+import { Box, Tabs, Tab, AppBar, Toolbar } from "@mui/material";
 import { useStore } from "../store/useStore";
 
 export default function Header() {
@@ -10,17 +10,21 @@ export default function Header() {
 
     return (
         <Box className="header">
-            <Tabs 
-                value={state.page} 
-                onChange={handleChange} 
-                centered
-            >
-                <Tab label="Home" />
-                <Tab label="About" />
-                <Tab label="Experience" />
-                <Tab label="Projects" />
-                <Tab label="Misc" />
-            </Tabs>
+            <AppBar position="sticky">
+                <Toolbar>
+                    <Tabs 
+                        value={state.page} 
+                        onChange={handleChange} 
+                        centered
+                    >
+                        <Tab label="Home" />
+                        <Tab label="About" />
+                        <Tab label="Experience" />
+                        <Tab label="Projects" />
+                        <Tab label="Misc" />
+                    </Tabs>
+                </Toolbar>
+            </AppBar>
         </Box>
     );
 }
