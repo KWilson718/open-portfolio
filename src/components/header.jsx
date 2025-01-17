@@ -1,17 +1,17 @@
-import {useState} from "react";
 import { Box, Tabs, Tab } from "@mui/material";
+import { useStore } from "../store/useStore";
 
 export default function Header() {
-    const [tabValue, setTabValue] = useState(0);
+    const {state, switchPage} = useStore();
 
     const handleChange = (event, newValue) => {
-        setTabValue(newValue);
+        switchPage(newValue);
     }
 
     return (
         <Box className="header">
             <Tabs 
-                value={tabValue} 
+                value={state.page} 
                 onChange={handleChange} 
                 centered
             >
